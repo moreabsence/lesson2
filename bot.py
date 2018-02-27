@@ -61,30 +61,68 @@ def calculate(bot, update):
     calc_string = update.message.text
     if calc_string.endswith('='):
         calc_string = calc_string.replace('=', '')
+        
         if '-' in calc_string:
             numbers = calc_string.split('-')
-            result = float(numbers[0]) - float(numbers[1])
-            update.message.reply_text(result)
+            true_numbers = []
+            for value in numbers:
+                try:
+                    true_numbers.append(int(value))
+                except ValueError:
+                    continue
+            if len(true_numbers) == 2:
+                result = float(numbers[0]) - float(numbers[1])
+                update.message.reply_text(result)
+            if len(true_numbers) < 2:
+                update.message.reply_text('Так не пойдет. Введите минимум два числа.')    
+        
         if '+' in calc_string:
             numbers = calc_string.split('+')
-            result = float(numbers[0]) + float(numbers[1])
-            update.message.reply_text(result)
+            true_numbers = []
+            for value in numbers:
+                try:
+                    true_numbers.append(int(value))
+                except ValueError:
+                    continue
+            if len(true_numbers) == 2:
+                result = float(numbers[0]) + float(numbers[1])
+                update.message.reply_text(result)
+            if len(true_numbers) < 2:
+                update.message.reply_text('Так не пойдет. Введите минимум два числа.')        
+        
         if '/' in calc_string:
             numbers = calc_string.split('/')
             second_number = numbers[1]
-            if second_number.startswith ('0') and not '.' in second_number:
-                update.message.reply_text('Я пока не умею делить на ноль.')    
-            else:
-                result = float(numbers[0]) / float(numbers[1])
-                update.message.reply_text(result)
+            true_numbers = []
+            for value in numbers:
+                try:
+                    true_numbers.append(float(value))
+                except ValueError:
+                    continue
+            if len(true_numbers) == 2:
+                if second_number.startswith('0') and not '.' in second_number:
+                    update.message.reply_text('Я пока не умею делить на ноль.')    
+                else:
+                    result = float(numbers[0]) / float(numbers[1])
+                    update.message.reply_text(result)
+            if len(true_numbers) < 2:
+                update.message.reply_text('Так не пойдет. Введите минимум два числа.')
+            
+
         if '*' in calc_string:
             numbers = calc_string.split('*')
-            result = float(numbers[0]) * float(numbers[1])
-            update.message.reply_text(result)
-        if '**' in calc_string:
-            numbers = calc_string.split('**')
-            result = float(numbers[0]) ** float(numbers[1])
-            update.message.reply_text(result)
+            true_numbers = []
+            for value in numbers:
+                try:
+                    true_numbers.append(int(value))
+                except ValueError:
+                    continue
+            if len(true_numbers) == 2:
+                result = float(numbers[0]) * float(numbers[1])
+                update.message.reply_text(result)
+            if len(true_numbers) < 2:
+                update.message.reply_text('Так не пойдет. Введите минимум два числа.')
+
     else:
         update.message.reply_text('Сама ты {}'.format(calc_string))
 
