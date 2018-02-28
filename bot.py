@@ -6,6 +6,8 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
 
 from ephem import *
 
+import datetime
+
 from collections import Counter
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
@@ -123,8 +125,95 @@ def calculate(bot, update):
             if len(true_numbers) < 2:
                 update.message.reply_text('Так не пойдет. Введите минимум два числа.')
 
+    elif calc_string.startswith('сколько будет'):
+        calc_string = calc_string.replace('сколько будет', '')
+        calc_string = calc_string.replace('ноль', '0')
+        calc_string = calc_string.replace('один', '1')
+        calc_string = calc_string.replace('два', '2')
+        calc_string = calc_string.replace('три', '3')
+        calc_string = calc_string.replace('четыре', '4')
+        calc_string = calc_string.replace('пять', '5')
+        calc_string = calc_string.replace('шесть', '6')
+        calc_string = calc_string.replace('семь', '7')
+        calc_string = calc_string.replace('восемь', '8')
+        calc_string = calc_string.replace('девять', '9')
+        calc_string = calc_string.replace(' и ', '.')
+        calc_string = calc_string.replace('на', '')
+        print(calc_string)
+
+        if 'минус' in calc_string:
+            numbers = calc_string.split('минус')
+            true_numbers = []
+            for value in numbers:
+                try:
+                    true_numbers.append(float(value))
+                except ValueError:
+                    continue
+            if len(true_numbers) == 2:
+                result = float(numbers[0]) - float(numbers[1])
+                update.message.reply_text(result)
+            if len(true_numbers) < 2:
+                update.message.reply_text('Так не пойдет. Введите минимум два числа.')    
+        
+        if 'плюс' in calc_string:
+            numbers = calc_string.split('плюс')
+            true_numbers = []
+            for value in numbers:
+                try:
+                    true_numbers.append(float(value))
+                except ValueError:
+                    continue
+            if len(true_numbers) == 2:
+                result = float(numbers[0]) + float(numbers[1])
+                update.message.reply_text(result)
+            if len(true_numbers) < 2:
+                update.message.reply_text('Так не пойдет. Введите минимум два числа.')        
+        
+        if 'разделить' in calc_string:
+            numbers = calc_string.split('разделить')
+            print(numbers)
+            second_number = numbers[1]
+            true_numbers = []
+            for value in numbers:
+                try:
+                    true_numbers.append(float(value))
+                except ValueError:
+                    continue
+            if len(true_numbers) == 2:
+                if '0' in second_number and not '.' in second_number:
+                    update.message.reply_text('Я пока не умею делить на ноль.')    
+                else:
+                    result = float(numbers[0]) / float(numbers[1])
+                    update.message.reply_text(result)
+            if len(true_numbers) < 2:
+                update.message.reply_text('Так не пойдет. Введите минимум два числа.')
+            
+
+        if 'умножить' in calc_string:
+            numbers = calc_string.split('умножить')
+            true_numbers = []
+            for value in numbers:
+                try:
+                    true_numbers.append(float(value))
+                except ValueError:
+                    continue
+            if len(true_numbers) == 2:
+                result = float(numbers[0]) * float(numbers[1])
+                update.message.reply_text(result)
+            if len(true_numbers) < 2:
+                update.message.reply_text('Так не пойдет. Введите минимум два числа.')
+
+    elif 'Когда ближайшее полнолуние?' in calc_string:
+        print(calc_string)
+        now = datetime.datetime.now()
+        now = now.strftime("%Y/%m/%d")
+        moon_time = next_full_moon(now)
+        update.message.reply_text(str(moon_time))
+
     else:
         update.message.reply_text('Сама ты {}'.format(calc_string))
+
+    
 
 
 def main():

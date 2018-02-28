@@ -3240,3 +3240,93 @@ Traceback (most recent call last):
   File "bot.py", line 68, in calculate
     new_list.append(int(value))
 ValueError: invalid literal for int() with base 10: ''
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 184, in calculate
+    result = float(numbers[0]) / float(numbers[1])
+ZeroDivisionError: float division by zero
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 180, in calculate
+    pint(true_numbers)
+NameError: name 'pint' is not defined
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 185, in calculate
+    result = float(numbers[0]) / float(numbers[1])
+ZeroDivisionError: float division by zero
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 207, in calculate
+    print(ephem.next_full_moon('2016/10/01'))
+NameError: name 'ephem' is not defined
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 207, in calculate
+    pirnt(calc_string)
+NameError: name 'pirnt' is not defined
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 207, in calculate
+    pirnt(calc_string)
+NameError: name 'pirnt' is not defined
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 207, in calculate
+    pirnt(calc_string)
+NameError: name 'pirnt' is not defined
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 207, in calculate
+    pirnt(calc_string)
+NameError: name 'pirnt' is not defined
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 207, in calculate
+    pirnt(calc_string)
+NameError: name 'pirnt' is not defined
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/pavel/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 208, in calculate
+    print(ephem.next_full_moon('2016/10/01'))
+NameError: name 'ephem' is not defined
