@@ -3330,3 +3330,6 @@ Traceback (most recent call last):
   File "bot.py", line 208, in calculate
     print(ephem.next_full_moon('2016/10/01'))
 NameError: name 'ephem' is not defined
+telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running (409)
+telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running (409)
+telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running (409)
