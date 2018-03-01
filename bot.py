@@ -8,8 +8,6 @@ from ephem import *
 
 import datetime
 
-from collections import Counter
-
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 def greet_user(bot, update):
