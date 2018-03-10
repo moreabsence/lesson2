@@ -22,6 +22,7 @@ with open('data-398-2018-02-13.csv', 'r', encoding = 'utf-8') as file:
 	reader = csv.DictReader(file, fields, delimiter = ';')
 	for row in reader:
 		list.append(row)
+		print(row)
 
 top_street = []
 
