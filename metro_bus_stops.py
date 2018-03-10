@@ -30,7 +30,6 @@ for line in metro_list:
 	if not line['RepairOfEscalators'] == '':
 		repairs[line['NameOfStation']] = (line['Longitude_WGS84'],line['Latitude_WGS84'])
 
-
 bus_list = []
 
 with open('data-398-2018-02-13.csv', 'r', encoding = 'utf-8') as file:
